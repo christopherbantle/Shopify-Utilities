@@ -28,7 +28,7 @@ for i in range(num_pages):
     parameters = {
         'page': i + 1,
         'limit': 250,
-        'fields': 'product_type,id'
+        'fields': 'id'
     }
 
     response = session.get(products_url, params=parameters)
