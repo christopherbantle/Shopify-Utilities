@@ -16,9 +16,9 @@ response = session.get(count_url)
 if response.status_code != 200:
     raise Exception('Status code: [%d] Unable to get URL: [%s]' % (response.status_code, count_url))
 
-number_of_products = json.loads(response.text)['count']
-
 sleep(0.5)
+
+number_of_products = json.loads(response.text)['count']
 
 num_pages = ceil(number_of_products / 250)
 
@@ -26,7 +26,6 @@ for i in range(num_pages):
     products_url = URL_PREFIX + 'products.json'
 
     parameters = {
-        'page': i + 1,
         'limit': 250,
         'fields': 'id'
     }
