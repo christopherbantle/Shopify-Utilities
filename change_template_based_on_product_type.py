@@ -48,7 +48,7 @@ for i in range(num_pages):
     response = session.get(products_url, params=parameters)
 
     if response.status_code != 200:
-        raise Exception('Status code: [%d] Unable to get URL: [%s]' % (response.status_code, products_url))
+        raise Exception('Status code: [%d] Unable to get with URL: [%s]' % (response.status_code, products_url))
 
     sleep(0.5)
 
