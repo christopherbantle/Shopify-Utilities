@@ -2,10 +2,18 @@ import requests
 import json
 from math import ceil
 from time import sleep
-from credentials import URL_PREFIX
+from configparser import ConfigParser
 
-# URL prefix is of the form: https://[API KEY]:[PASSWORD]@[STORE NAME].myshopify.com/admin/
-count_url = URL_PREFIX + 'products/count.json'
+config_parser = ConfigParser()
+config_parser.read('.credentials')
+
+api_key = config_parser['default']['API_KEY']
+password = config_parser['default']['PASSWORD']
+store_url_prefix = config_parser['default']['STORE_URL_PREFIX']
+
+url_prefix = 'https://%s:%s@%s.myshopify.com/admin/' % (api_key, password, store_url_prefix)
+
+count_url = url_prefix + 'products/count.json'
 
 session = requests.Session()
 
@@ -23,7 +31,7 @@ number_of_products = json.loads(response.text)['count']
 num_pages = ceil(number_of_products / 250)
 
 for i in range(num_pages):
-    products_url = URL_PREFIX + 'products.json'
+    products_url = url_prefix + 'products.json'
 
     parameters = {
         'limit': 250,
@@ -42,7 +50,7 @@ for i in range(num_pages):
     for product in products:
         product_id = product['id']
 
-        product_url = URL_PREFIX + 'products/%d.json' % product_id
+        product_url = url_prefix + 'products/%d.json' % product_id
 
         response = session.delete(product_url)
 
