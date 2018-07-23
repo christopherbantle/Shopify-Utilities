@@ -3,7 +3,7 @@
 In order to use these utilities, you must have a `.credentials` file with the following format:
 
 ```
-[PROFILE NAME]
+[profile name]
 API_KEY = ****
 PASSWORD = ****
 STORE_URL_PREFIX = my-store
