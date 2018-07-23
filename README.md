@@ -4,9 +4,9 @@ In order to use these utilities, you must have a `.credentials` file with the fo
 
 ```
 [PROFILE NAME]
-API_KEY = API KEY
-PASSWORD = PASSWORD
-STORE_URL_PREFIX = *STORE URL PREFIX (e.g. my-store)*
+API_KEY = ****
+PASSWORD = ****
+STORE_URL_PREFIX = my-store
 ```
 
 ## change_template_based_on_product_type.py
