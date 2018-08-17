@@ -17,3 +17,6 @@ Use this script to delete all of the products in your store (can be modified eas
 
 ## delete_products_of_specific_product_type.py
 Use this script to delete all products of a specific product type.
+
+## change_weight_of_specific_variants_to_zero.py
+Use this script to change the weight of specific variants to zero.
