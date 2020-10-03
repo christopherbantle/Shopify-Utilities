@@ -5,15 +5,15 @@ from time import sleep
 from configparser import ConfigParser
 
 PRODUCT_TYPE_TO_TEMPLATE = {
-    "Photo": "regular-photo"
+    'Photo': 'regular-photo'
 }
 
 config_parser = ConfigParser()
 config_parser.read('.credentials')
 
-api_key = config_parser['default']['API_KEY']
-password = config_parser['default']['PASSWORD']
-store_url_prefix = config_parser['default']['STORE_URL_PREFIX']
+api_key = config_parser['aitw']['API_KEY']
+password = config_parser['aitw']['PASSWORD']
+store_url_prefix = config_parser['aitw']['STORE_URL_PREFIX']
 
 url_prefix = 'https://%s:%s@%s.myshopify.com/admin/' % (api_key, password, store_url_prefix)
 
@@ -40,7 +40,8 @@ for i in range(num_pages):
     parameters = {
         'page': i + 1,
         'limit': 250,
-        'fields': 'product_type,id'
+        'fields': 'product_type,id,template_suffix,published_at,handle',
+        'created_at_min': '2019-08-09T09:00:00-06:00'
     }
 
     response = session.get(products_url, params=parameters)
@@ -55,15 +56,19 @@ for i in range(num_pages):
     for product in products:
         product_type = product['product_type']
         product_id = product['id']
+        product_template = product['template_suffix']
 
         if product_type not in PRODUCT_TYPE_TO_TEMPLATE:
             print('Encountered product with id [%d] and type [%s] that could not be processed.' % (product_id,
                                                                                                    product_type))
+        elif product_template == PRODUCT_TYPE_TO_TEMPLATE[product_type]:
+            print('Product already has correct template')
         else:
             payload = {
                 'product': {
                     'id': product_id,
-                    'template_suffix': PRODUCT_TYPE_TO_TEMPLATE[product_type]
+                    'template_suffix': PRODUCT_TYPE_TO_TEMPLATE[product_type],
+                    'published': True
                 }
             }
 

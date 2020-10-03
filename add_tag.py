@@ -46,7 +46,7 @@ for i in range(num_pages):
     parameters = {
         'page': i + 1,
         'limit': 250,
-        'fields': 'id,variants',
+        'fields': 'id,tags',
         'product_type': 'Photo',
         'created_at_min': '2019-08-09T09:00:00-06:00'
     }
@@ -63,29 +63,20 @@ for i in range(num_pages):
 
     for product in products:
         product_id = product['id']
-        variants = product['variants']
+        tags = product['tags']
 
-        for variant in variants:
-            variant_id = variant['id']
-            option2 = variant.get('option2')
+        payload = {
+            'product': {
+                'id': product_id,
+                'tags': tags + ', Web-Release-2019-08'
+            }
+        }
 
-            if option2 == 'Printed Photo Only':
-                payload = {
-                    'variant': {
-                        'id': variant_id,
-                        'weight': 0
-                    }
-                }
+        product_url = url_prefix + 'products/%d.json' % product_id
 
-                variant_url = url_prefix + 'variants/%d.json' % variant_id
+        response = session.put(product_url, json=payload)
 
-                response = session.put(variant_url, json=payload)
+        if response.status_code != 200:
+            raise Exception('Status code: [%d] Unable to put with URL: [%s]' % (response.status_code, product_url))
 
-                if response.status_code != 200:
-                    raise Exception(
-                        'Status code: [%d] Unable to put with URL: [%s]' %
-                        (response.status_code, variant_url))
-
-                print('Put with url [%s]' % variant_url)
-
-                sleep(0.5)
+        sleep(0.5)

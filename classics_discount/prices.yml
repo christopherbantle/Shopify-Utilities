@@ -1,0 +1,60 @@
+Regular:
+  Natural Wood Frame:
+    5x7: 70
+    8x10: 130
+    11x14: 350
+    20x30: 895
+  Contemporary Frame:
+    5x7: 95
+    8x10: 170
+    11x14: 475
+    20x30: 1350
+    30x40: 2950
+  Acrylic:
+    11x14: 550
+    20x30: 1495
+    30x40: 2750
+  Matted:
+    5x7: 49
+    8x10: 79
+    11x14: 199
+    20x30: 695
+  Printed Photo Only:
+    11x14: 175
+    20x30: 625
+    30x40: 1750
+Panoramic:
+  Natural Wood Frame:
+    3x7: 70
+    4 1/2x10: 130
+    7x15: 219
+    10x24: 425
+    13x32: 750
+  Contemporary Frame:
+    3x7: 95
+    4 1/2x10: 170
+    7x15: 265
+    10x24: 550
+    13x32: 1100
+    20x48: 2150
+  Acrylic:
+    10x24: 695
+    13x32: 1095
+    20x48: 1895
+    28x67: 3495
+  Matted:
+    3x7: 49
+    4 1/2x10: 79
+    7x15: 149
+    10x24: 325
+    13x32: 600
+  Printed Photo Only:
+    7x15: 135
+    10x24: 275
+    13x32: 550
+    20x48: 1250
+    28x67: 2450
+Triptych:
+  Acrylic:
+    24x57: 2495
+    44x84: 4195
