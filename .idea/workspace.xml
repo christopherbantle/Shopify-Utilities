@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e41b01e-3284-45d5-a95c-22d2d3a2d46e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/add_tag.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/change_variant_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classics_discount/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classics_discount/apply_discount.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classics_discount/prices.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classics_discount/reverse_discount.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/price_change/change_prices.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/price_change/prices.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/change_template_based_on_product_type.py" beforeDir="false" afterPath="$PROJECT_DIR$/change_template_based_on_product_type.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/change_weight_of_specific_variants_to_zero.py" beforeDir="false" afterPath="$PROJECT_DIR$/change_weight_of_specific_variants_to_zero.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/change_variant_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/change_variant_order.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,53 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/change_weight_of_specific_variants_to_zero.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/change_variant_order.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/change_template_based_on_product_type.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="66" selection-start-line="66" selection-end-line="72" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/add_tag.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classics_discount/prices.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classics_discount/reverse_discount.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
-              <caret line="125" selection-start-line="125" selection-end-line="125" />
+            <state relative-caret-position="390">
+              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
               <folding>
                 <element signature="e#23#34#0" expanded="true" />
               </folding>
@@ -76,28 +25,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/price_change/change_prices.py">
+        <entry file="file://$PROJECT_DIR$/products.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="161" column="13" lean-forward="true" selection-start-line="161" selection-start-column="13" selection-end-line="161" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/change_variant_order.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/price_change/.credentials">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="357">
+              <caret line="158" column="31" selection-start-line="158" selection-start-column="28" selection-end-line="158" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -370,10 +301,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49964765" weight="0.32907802" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49612403" visible="true" weight="0.11082803" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49612403" weight="0.24968153" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.503876" side_tool="true" weight="0.25531915" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49964765" weight="0.32907802" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49964765" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49964765" weight="0.32866243" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49964765" visible="true" weight="0.32866243" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -458,16 +389,16 @@
     <entry file="file://$PROJECT_DIR$/price_change/price-changes-2019-03-20.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/price_change/prices.yml">
+    <entry file="file://$PROJECT_DIR$/classics_discount/prices.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="41">
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/change_weight_of_specific_variants_to_zero.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
+        <state relative-caret-position="512">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -477,7 +408,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/change_template_based_on_product_type.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
+        <state relative-caret-position="512">
           <caret line="66" selection-start-line="66" selection-end-line="72" selection-end-column="13" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -487,32 +418,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_tag.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
+        <state relative-caret-position="512">
           <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classics_discount/prices.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classics_discount/reverse_discount.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
+        <state relative-caret-position="512">
           <caret line="125" selection-start-line="125" selection-end-line="125" />
           <folding>
             <element signature="e#23#34#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/price_change/.credentials">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
@@ -523,10 +440,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/price_change/prices.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/price_change/.credentials">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="158" column="31" selection-start-line="158" selection-start-column="28" selection-end-line="158" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/change_variant_order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+        <state relative-caret-position="390">
+          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

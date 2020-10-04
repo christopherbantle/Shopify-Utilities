@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import copy
 from math import ceil
 from time import sleep
 from configparser import ConfigParser
@@ -78,94 +79,31 @@ def change_format_name(profile, dry_run=True):
         product_id = product['id']
         product_title = product['title']
 
+        # TODO: Copy
         updated_product = {
             'id': product_id,
-            'variants': []
+            'variants': copy.deepcopy(product['variants'])
         }
-        for variant in product['variants']:
-            variant_id = variant['id']
-            cropping = variant['option1']
-            variant_format = variant['option2']
-            size = variant['option3']
+        variant = next(
+            (x for x in updated_product['variants'] if x.get('option2') == 'Matted' and x.get('option3') == '5x7'),
+            None
+        )
 
-            if variant_format == 'Natural Wood Frame':
-                change = True
-            else:
-                change = False
+        if variant is not None:
+            updated_product['variants'].remove(variant)
+            updated_product['variants'].insert(0, variant)
 
-            updated_variant = {
-                'id': variant_id
-            }
-            if change:
-                updated_variant['option2'] = 'Canadian Wood Frame'
+            updated_product['variants'] = [{'id': x['id']} for x in updated_product['variants']]
 
-            updated_product['variants'].append(updated_variant)
+            if not dry_run:
+                client.update_product(product_id, updated_product)
 
-            print(
-                '{title:<30}{cropping:<15}{format:<25}{size:<15}{change}'.format(
-                    title=product_title,
-                    cropping=cropping,
-                    format=updated_variant.get('option2', variant['option2']),
-                    size=size,
-                    change=change
-                )
-            )
+            print('Successfully updated product [{}]'.format(product_title))
 
-        if not dry_run:
-            client.update_product(product_id, updated_product)
-
-
-# def change_prices(profile, dry_run=True):
-#     client = Client(profile)
-#
-#     products = client.list_products()
-#     for product in products:
-#         product_id = product['id']
-#         product_title = product['title']
-#
-#         updated_product = {
-#             'id': product_id,
-#             'variants': []
-#         }
-#         for variant in product['variants']:
-#             variant_id = variant['id']
-#             cropping = variant['option1']
-#             variant_format = variant['option2']
-#             size = variant['option3']
-#             original_price = variant['price']
-#
-#             if product_title not in titles_to_exclude and \
-#                     cropping in mapping and \
-#                     variant_format in mapping[cropping] and \
-#                     size in mapping[cropping][variant_format]:
-#                 new_price = mapping[cropping][variant_format][size]
-#                 change = True
-#             else:
-#                 new_price = original_price
-#                 change = False
-#
-#             updated_variant = {
-#                 'id': variant_id
-#             }
-#             if change:
-#                 updated_variant['price'] = new_price
-#
-#             updated_product['variants'].append(updated_variant)
-#
-#             print(
-#                 '{title:<30}{cropping:<15}{format:<25}{size:<15}{original_price:<15}{new_price:<15}{change}'.format(
-#                     title=product_title,
-#                     cropping=cropping,
-#                     format=variant_format,
-#                     size=size,
-#                     original_price=original_price,
-#                     new_price=new_price,
-#                     change=change
-#                 )
-#             )
-#
-#         if not dry_run:
-#             client.update_product(product_id, updated_product)
+            # TODO: Remove
+            exit(0)
+        else:
+            print('Product [{}] does not have matted 5x7 variant'.format(product_title))
 
 
 def main():
