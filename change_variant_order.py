@@ -71,7 +71,7 @@ class Client:
         self._put(url_suffix, payload)
 
 
-def change_format_name(profile, dry_run=True):
+def change_format_name(profile, dry_run=True, exit_on_first=False):
     client = Client(profile)
 
     products = client.list_products()
@@ -100,14 +100,14 @@ def change_format_name(profile, dry_run=True):
 
             print('Successfully updated product [{}]'.format(product_title))
 
-            # TODO: Remove
-            exit(0)
+            if exit_on_first:
+                exit(0)
         else:
             print('Product [{}] does not have matted 5x7 variant'.format(product_title))
 
 
 def main():
-    change_format_name('aitw', dry_run=False)
+    change_format_name('aitw', dry_run=False, exit_on_first=False)
 
 
 if __name__ == '__main__':
