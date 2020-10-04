@@ -85,7 +85,10 @@ def change_format_name(profile, dry_run=True, exit_on_first=False):
             'variants': copy.deepcopy(product['variants'])
         }
         variant = next(
-            (x for x in updated_product['variants'] if x.get('option2') == 'Matted' and x.get('option3') == '5x7'),
+            (
+                x for x in updated_product['variants']
+                if x.get('option2') == 'Matted' and (x.get('option3') == '5x7' or x.get('option3') == '3x7')
+            ),
             None
         )
 
