@@ -91,8 +91,8 @@ def associate_locations(profile, dry_run=True, exit_on_first=False):
     client = Client(profile)
 
     # Get all locations
-    location_ids = [x['id'] for x in client.list_locations() if x['id'] != '5868650555']
-    print('Found locations [{}]'.format(', '.join(location_ids)))
+    location_ids = [x['id'] for x in client.list_locations() if str(x['id']) != '5868650555']
+    print('Found locations [{}]'.format(', '.join(str(x) for x in location_ids)))
 
     products = client.list_products()
     for product in products:
@@ -106,7 +106,7 @@ def associate_locations(profile, dry_run=True, exit_on_first=False):
             for location_id in location_ids:
                 if not dry_run:
                     client.connect_inventory_item(inventory_item_id, location_id)
-                print('[{}]\t[{}]\t[{}]'.format(variant_id, inventory_item_id, location_id))
+                print('{}\t{}\t{}'.format(variant_id, inventory_item_id, location_id))
 
         if exit_on_first:
             exit(0)
