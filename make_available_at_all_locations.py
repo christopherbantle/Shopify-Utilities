@@ -94,9 +94,17 @@ def associate_locations(profile, dry_run=True, exit_on_first=False):
     location_ids = [x['id'] for x in client.list_locations() if str(x['id']) != '5868650555']
     print('Found locations [{}]'.format(', '.join(str(x) for x in location_ids)))
 
+    skip = True
+
     products = client.list_products()
     for product in products:
         product_title = product['title']
+
+        if product_title == 'Edge of Columbia':
+            skip = False
+
+        if skip:
+            continue
 
         print('Updating product [{}]...'.format(product_title))
 
@@ -113,7 +121,7 @@ def associate_locations(profile, dry_run=True, exit_on_first=False):
 
 
 def main():
-    associate_locations('aitw', dry_run=False, exit_on_first=True)
+    associate_locations('aitw', dry_run=False, exit_on_first=False)
 
 
 if __name__ == '__main__':
